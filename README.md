@@ -6,7 +6,8 @@ The challenge consists of developing the entire life cycle of a Big Data applica
 
 Python 3.9 required when using `gilarasa/lithops-cloudbutton-challenge-py3.9:0.1` runtime to perform sentiment analysis.
 
-pip install -r requirements.txt
+1. Install dependencies:
+`pip install -r requirements.txt`
 
 ## References
 
