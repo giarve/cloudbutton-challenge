@@ -9,6 +9,9 @@ Python 3.9 required when using `gilarasa/lithops-cloudbutton-challenge-py3.9:0.1
 1. Install dependencies:
 `pip install -r requirements.txt`
 
+
+TODO: Split stage 1 and stage 2 into different runtimes?
+
 ## References
 
 https://github.com/lithops-cloud/lithops/blob/master/docs/mode_serverless.md
