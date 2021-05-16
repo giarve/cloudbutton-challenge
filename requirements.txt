@@ -1,8 +1,7 @@
 lithops==2.3.3
 
 # Twitter
-tweepy==3.10.0
-twint==2.1.20
+tweepy==3.10.0 # TODO: remove this?
 
 transformers==4.5.1
 

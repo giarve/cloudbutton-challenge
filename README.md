@@ -10,8 +10,6 @@ Python 3.9 required when using `gilarasa/lithops-cloudbutton-challenge-py3.9:0.1
 `pip install -r requirements.txt`
 
 
-TODO: Split stage 1 and stage 2 into different runtimes?
-
 ## References
 
 https://github.com/lithops-cloud/lithops/blob/master/docs/mode_serverless.md
@@ -25,3 +23,7 @@ https://github.com/lithops-cloud/lithops/blob/master/docs/mode_localhost.md#dock
 https://github.com/lithops-cloud/lithops/tree/master/runtime/ibm_cf#custom-runtime
 
 https://developer.twitter.com/en/docs
+
+## Adopted libraries
+
+https://github.com/JustAnotherArchivist/snscrape
