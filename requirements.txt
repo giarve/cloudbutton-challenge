@@ -1,8 +1,4 @@
 lithops==2.3.3
-
-# Twitter
-tweepy==3.10.0 # TODO: remove this?
-
 transformers==4.5.1
 
 -f https://download.pytorch.org/whl/torch_stable.html

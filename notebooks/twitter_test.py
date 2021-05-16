@@ -1,5 +1,7 @@
 from twitter import TwitterSearchScraper
 
+# TODO: Delet dis.
+
 total = 0
 geo = 0
 place = 0
