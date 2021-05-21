@@ -9,7 +9,7 @@ import json
 import random
 import logging
 import re
-import snscrape_base
+from . import snscrape_base
 import string
 import time
 import typing
