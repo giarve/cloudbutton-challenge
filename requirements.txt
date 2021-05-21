@@ -1,4 +1,7 @@
 lithops==2.3.3
+
+# Inference
+
 transformers==4.5.1
 
 -f https://download.pytorch.org/whl/torch_stable.html
@@ -6,3 +9,7 @@ torch==1.8.1+cpu
 
 # Data handling
 dataclasses-json==0.5.3
+
+# Jupyter only
+jupyter-dash==0.4.0
+nbformat==5.1.3
