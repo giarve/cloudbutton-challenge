@@ -28,8 +28,6 @@ class Tweet(snscrape_base.Item):
 	renderedContent: str
 	id: int
 	user: 'User'
-	outlinks: list
-	tcooutlinks: list
 	replyCount: int
 	retweetCount: int
 	likeCount: int
@@ -37,6 +35,8 @@ class Tweet(snscrape_base.Item):
 	conversationId: int
 	lang: str
 	source: str
+	outlinks: typing.Optional[typing.List[str]] = None
+	tcooutlinks: typing.Optional[typing.List[str]] = None
 	sourceUrl: typing.Optional[str] = None
 	sourceLabel: typing.Optional[str] = None
 	media: typing.Optional[typing.List['Medium']] = None

@@ -3,6 +3,7 @@
 import abc
 import copy
 import dataclasses
+import dataclasses_json
 import datetime
 import functools
 import json
@@ -28,50 +29,9 @@ class _DeprecatedProperty:
 		return self.repl(obj)
 
 
-def _json_serialise_datetime(obj):
-	'''A JSON serialiser that converts datetime.datetime and datetime.date objects to ISO-8601 strings.'''
-	if isinstance(obj, (datetime.datetime, datetime.date)):
-		return obj.isoformat()
-	raise TypeError(f'Object of type {type(obj)} is not JSON serializable')
-
-
-def _json_dataclass_to_dict(obj):
-	if isinstance(obj, _JSONDataclass) or dataclasses.is_dataclass(obj):
-		out = {}
-		for field in dataclasses.fields(obj):
-			out[field.name] = _json_dataclass_to_dict(getattr(obj, field.name))
-		# Add in (non-deprecated) properties
-		for k in dir(obj):
-			if isinstance(getattr(type(obj), k, None), property):
-				out[k] = _json_dataclass_to_dict(getattr(obj, k))
-		return out
-	elif isinstance(obj, (tuple, list)):
-		return type(obj)(_json_dataclass_to_dict(x) for x in obj)
-	elif isinstance(obj, dict):
-		return {_json_dataclass_to_dict(k): _json_dataclass_to_dict(v) for k, v in obj.items()}
-	elif isinstance(obj, set):
-		return {_json_dataclass_to_dict(v) for v in obj}
-	else:
-		return copy.deepcopy(obj)
-
-
+@dataclasses_json.dataclass_json
 @dataclasses.dataclass
-class _JSONDataclass:
-	'''A base class for dataclasses for conversion to JSON'''
-
-	def json(self):
-		'''Convert the object to a JSON string'''
-		out = _json_dataclass_to_dict(self)
-		for key, value in list(out.items()): # Modifying the dict below, so make a copy first
-			if isinstance(value, IntWithGranularity):
-				out[key] = int(value)
-				assert f'{key}.granularity' not in out, f'Granularity collision on {key}.granularity'
-				out[f'{key}.granularity'] = value.granularity
-		return json.dumps(out, default = _json_serialise_datetime)
-
-
-@dataclasses.dataclass
-class Item(_JSONDataclass):
+class Item:
 	'''An abstract base class for an item returned by the scraper's get_items generator.
 
 	An item can really be anything. The string representation should be useful for the CLI output (e.g. a direct URL for the item).'''
@@ -81,8 +41,9 @@ class Item(_JSONDataclass):
 		pass
 
 
+@dataclasses_json.dataclass_json
 @dataclasses.dataclass
-class Entity(_JSONDataclass):
+class Entity:
 	'''An abstract base class for an entity returned by the scraper's entity property.
 
 	An entity is typically the account of a person or organisation. The string representation should be the preferred direct URL to the entity's page on the network.'''
