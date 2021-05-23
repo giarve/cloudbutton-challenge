@@ -1,0 +1,1 @@
+# BUG: This file is necessary when using lithops, otherwise the library won't pick up and pickle this folder as a module.
