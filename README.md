@@ -4,11 +4,20 @@ The challenge consists of developing the entire life cycle of a Big Data applica
 
 # Dev environment installation
 
-Python 3.9 required when using `gilarasa/lithops-cloudbutton-challenge-py3.9:0.1` runtime to perform sentiment analysis.
+Python 3.9 required when using `gilarasa/lithops-cloudbutton-challenge-py3.9:0.5` runtime to perform preprocessing.
 
-1. Install dependencies:
+
+1. Create a local virtual environment: `python3 -m venv .venv`
+
+2. Activate it: `source .venv/bin/activate`
+
+2. Install dependencies:
 `pip install -r requirements.txt`
 
+3. Start jupyter server: `jupyter notebook notebooks/`
+
+
+If you dont have jupyter notebook package installed locally you can install it using `pip install notebook`.
 
 ## References
 
@@ -26,4 +35,4 @@ https://developer.twitter.com/en/docs
 
 ## Adopted libraries
 
-https://github.com/JustAnotherArchivist/snscrape
+https://github.com/JustAnotherArchivist/snscrape inside custom_snscrape with some modifications.
