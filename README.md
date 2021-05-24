@@ -21,17 +21,15 @@ If you dont have jupyter notebook package installed locally you can install it u
 
 ## References
 
-https://github.com/lithops-cloud/lithops/blob/master/docs/mode_serverless.md
-
 https://github.com/lithops-cloud/applications/blob/master/momentsintime/example_mit.ipynb
-
-https://huggingface.co/transformers/quicktour.html
 
 https://github.com/lithops-cloud/lithops/blob/master/docs/mode_localhost.md#docker-environment
 
 https://github.com/lithops-cloud/lithops/tree/master/runtime/ibm_cf#custom-runtime
 
-https://developer.twitter.com/en/docs
+https://github.com/lithops-cloud/lithops/blob/master/docs/data_processing.md
+
+https://huggingface.co/transformers/quicktour.html
 
 ## Adopted libraries
 
