@@ -24,3 +24,5 @@ ipywidgets==7.6.3
 geopandas==0.9.0
 folium==0.12.1
 matplotlib==3.4.2
+
+dataframe_sql==0.4.0
