@@ -20,3 +20,7 @@ jupyter-dash==0.4.0
 nbformat==5.1.3
 calplot==0.1.7.3
 ipywidgets==7.6.3
+
+geopandas==0.9.0
+folium==0.12.1
+matplotlib==3.4.2
