@@ -4,7 +4,7 @@ The challenge consists of developing the entire life cycle of a Big Data applica
 
 # Dev environment installation
 
-Python 3.9 required when using `gilarasa/lithops-cloudbutton-challenge-py3.9:0.5` runtime to perform preprocessing.
+Python 3.9 required when using `gilarasa/lithops-cloudbutton-challenge-py3.9:0.7` runtime to perform preprocessing.
 
 
 1. Create a local virtual environment: `python3 -m venv .venv`
